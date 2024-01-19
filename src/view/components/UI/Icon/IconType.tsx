@@ -4,4 +4,5 @@ export enum ICON {
     CATALOG = 'catalog',
     ENVELOPE = 'envelope',
     PHONE = 'phone',
+    CART = 'cart',
 }
