@@ -8,12 +8,11 @@ export default {
             center: true,
         },
         colors: {
-            black: '#000000',
-            purple: '#7A92E5',
-            gray: '#7F7F7F',
-            light_purple: '#D6DFFF',
-            white: '#FFFFFF',
-            red: '#DA0941',
+            white: '#FFF',
+            darkBlue: '#000D53',
+            black: '#000',
+            lightGray: '#F0F0F0',
+            gray: '#9F9F9F',
         },
         fontFamily: {
             sans: [['"Manrope Variable"', ...defaultTheme.fontFamily.sans]],
