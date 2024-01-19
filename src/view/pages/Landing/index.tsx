@@ -17,10 +17,9 @@ export const Landing: React.FC = () => {
     console.log(data);
     return (
         <div className={cx(styles.landing)}>
-            <ContentWrapper>
-                <Header />
-                <FactoryImage />
-            </ContentWrapper>
+            <div className={'container block'}></div>
+            <Icon icon={ICON.LOGO} width={175} height={55} color={'black'} />
+            <Footer />
         </div>
     );
 };
