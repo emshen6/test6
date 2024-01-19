@@ -9,8 +9,8 @@ const cx = classNames.bind(styles);
 export const Landing: React.FC = () => {
     return (
         <div className={cx(styles.landing)}>
-            <Icon icon={ICON.LOGO} width={175} style={{ display: 'block' }} color={'black'} />
-            <Icon icon={ICON.CLOSE_SMALL} width={24} style={{ display: 'block' }} color={'black'} />
+            <div className={'container block'}></div>
+            <Icon icon={ICON.LOGO} width={175} height={55} color={'black'} />
         </div>
     );
 };

@@ -38,10 +38,10 @@ const Icon = (props: IIconProps) => {
 
     return (
         <i
-            className={cx(baseClassName, className)}
+            className={cx(baseClassName, className, styles.icon)}
             style={{
                 width,
-                height: width,
+                height: props.height ?? width,
                 backgroundColor: color,
                 ...style,
             }}
