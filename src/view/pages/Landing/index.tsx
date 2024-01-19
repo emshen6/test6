@@ -3,6 +3,7 @@ import classNames from 'classnames';
 import styles from './index.module.scss';
 import Icon from '../../components/UI/Icon';
 import { ICON } from '../../components/UI/Icon/IconType.tsx';
+import { Footer } from '../../components/Footer/index.tsx';
 
 const cx = classNames.bind(styles);
 
