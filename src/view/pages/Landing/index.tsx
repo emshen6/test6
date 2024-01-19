@@ -6,9 +6,9 @@ import { ICON } from '../../components/UI/Icon/IconType.tsx';
 import { Footer } from '../../components/Footer/index.tsx';
 import { useGetProductsQuery } from '../../../core/api/product';
 import { FactoryImage } from '../../../assets/image/FactoryImage';
-import { ContentWrapper } from '../../components/ContentWrapper';
 import { Header } from '../../components/Header';
 import { Benefits } from '../../components/Benefits/index.tsx';
+import { About } from '../../components/About';
 
 const cx = classNames.bind(styles);
 
@@ -21,9 +21,9 @@ export const Landing: React.FC = () => {
     return (
         <div className={cx(styles.landing)}>
             <Header />
-            <FactoryImage />
             <div className={'container block'}></div>
             <Benefits titles={titles} descriptions={descriptions} />
+            <About />
             <Footer />
         </div>
     );

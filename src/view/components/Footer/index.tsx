@@ -1,19 +1,19 @@
-import React from 'react';
 import classNames from 'classnames';
+import React from 'react';
 import styles from './index.module.scss';
 import { ru } from './i18n/ru.ts';
 import Icon from '../../components/UI/Icon';
-import { ICON } from '../../components/UI/Icon/IconType.tsx';
-import { ContentWrapper } from '../ContentWrapper/index.tsx';
+import { ICON } from '../UI/Icon/IconType';
+import { ContentWrapper } from '../ContentWrapper';
 
 const cx = classNames.bind(styles);
 
-export const Footer = () => {
+export const Footer: React.FC = () => {
     return (
         <div className={cx(styles.footer)}>
             <ContentWrapper>
-                <div className="grid grid-cols-2 gap-96">
-                    <div className="ml-5 mt-10">
+                <div className="flex justify-between">
+                    <div className="mt-10">
                         <Icon icon={ICON.LOGO} width={175} height={55} color={'white'} />
                     </div>
                     <div className="gap-50 mb-20 mt-10 grid grid-cols-2 text-white">
