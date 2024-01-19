@@ -154,6 +154,13 @@ module.exports = {
                 ],
             },
         },
+        {
+            files: ['**/i18n/**'],
+            plugins: ['eslint-plugin-no-cyrillic-string'],
+            rules: {
+                'no-cyrillic-string/no-cyrillic-string': OFF,
+            },
+        },
     ],
     ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
 }
