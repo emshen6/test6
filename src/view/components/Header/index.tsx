@@ -13,7 +13,7 @@ export const Header: React.FC = () => {
         <ContentWrapper>
             <div className="flex justify-between">
                 <Icon icon={ICON.LOGO} width={175} height={55} color={'black'} />
-                <div className="m-5 gap-10">
+                <div className="m-5 flex gap-10">
                     <input type={'text'} placeholder={ru.searchPlaceholder} className={cx(styles.input)} />
                     <div className="gap-5">
                         <button className={cx(styles.smallButton)}>

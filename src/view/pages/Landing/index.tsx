@@ -8,17 +8,22 @@ import { useGetProductsQuery } from '../../../core/api/product';
 import { FactoryImage } from '../../../assets/image/FactoryImage';
 import { ContentWrapper } from '../../components/ContentWrapper';
 import { Header } from '../../components/Header';
+import { Benefits } from '../../components/Benefits/index.tsx';
 
 const cx = classNames.bind(styles);
 
 export const Landing: React.FC = () => {
     const { data } = useGetProductsQuery();
+    const titles = ['a', 'b', 'c', 'd'];
+    const descriptions = ['a', 'b', 'c', 'd'];
 
     console.log(data);
     return (
         <div className={cx(styles.landing)}>
+            <Header />
+            <FactoryImage />
             <div className={'container block'}></div>
-            <Icon icon={ICON.LOGO} width={175} height={55} color={'black'} />
+            <Benefits titles={titles} descriptions={descriptions} />
             <Footer />
         </div>
     );

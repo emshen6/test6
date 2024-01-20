@@ -5,3 +5,12 @@
 .small_button {
     @apply bg-lightGray hover:bg-gray p-3 rounded-full focus:outline-none
   }
+
+  @keyframes colorChange {
+    0% {
+        @apply bg-lightGray /* Start color */
+    }
+    100% {
+        @apply bg-gray /* End color */
+    }
+  }
