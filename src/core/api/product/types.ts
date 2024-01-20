@@ -3,9 +3,14 @@ export interface IImage {
 }
 
 export interface IProduct {
+    id: number;
     name: string;
     type_of_product_id: number;
     description: string;
-    id: number;
     images: IImage[];
+}
+
+export interface IProductType {
+    id: number;
+    name: string;
 }

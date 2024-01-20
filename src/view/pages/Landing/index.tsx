@@ -14,19 +14,21 @@ import { CatalogPart } from '../../components/CatalogPart';
 const cx = classNames.bind(styles);
 
 export const Landing: React.FC = () => {
-    const { data } = useGetProductsQuery();
     const titles = ['a', 'b', 'c', 'd'];
     const descriptions = ['a', 'b', 'c', 'd'];
 
-    console.log(data);
     return (
         <div className={cx(styles.landing)}>
-            <Header />
-            <div className={'container block'}></div>
-            <Benefits titles={titles} descriptions={descriptions} />
-            <About />
-            <CatalogPart />
-            <Footer />
+            <div className={styles.wrapper}>
+                <div>
+                    <Header />
+                    <FactoryImage />
+                </div>
+                <Benefits titles={titles} descriptions={descriptions} />
+                <About />
+                <CatalogPart />
+                <Footer />
+            </div>
         </div>
     );
 };
