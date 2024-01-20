@@ -4,12 +4,15 @@ import { ContentWrapper } from '../../components/ContentWrapper';
 import { Menu } from '../../components/Menu';
 import { Title } from '../../components/UI/Text/Title';
 import { Header } from '../../components/Header';
-import { useGetProductsByTypeQuery } from '../../../core/api/product';
-import { CatalogItem } from '../../components/UI/Card/CatalogItem';
+import { useGetProductsByTypeQuery, useGetProductsQuery } from '../../../core/api/product';
+import { CatalogFullItem } from '../../components/CatalogFullItem/index.tsx';
 
-export const Catalog = () => {
+export const ProductDetails = () => {
     const [curTypeId, setCurTypeId] = useState<number | null>(null);
     const { data } = useGetProductsByTypeQuery(curTypeId ?? 0);
+
+    const [selectedId, setSelectedId] = useState<number | null>(null);
+    const { product } = useGetProductsQuery(selectedId ?? 0);
 
     return (
         <>
@@ -22,7 +25,11 @@ export const Catalog = () => {
                     <div className={'col-span-9'}>
                         <Title name={ru.title} />
                         <div className={'flex flex-wrap gap-7'}>
-                            {data?.map((x) => <CatalogItem key={x?.id} id={x?.id} title={x?.name} imageId={x?.images[0]?.id} />)}
+                            <CatalogFullItem
+                                productName={product.name}
+                                description={product.description}
+                                img={product.images[0].id}
+                            />
                         </div>
                     </div>
                 </div>
