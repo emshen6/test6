@@ -18,9 +18,11 @@ export const CatalogPart: React.FC = () => {
                 <Title name={ru.title} />
                 <div className={cx(styles.scrollable, styles.hideScrollBar)}>
                     <div className={cx(styles.cardsWrapper)}>
-                        {data?.map((product) => (
-                            <CatalogCard key={product?.id} title={product?.name} imageId={product?.images[0]?.id} />
-                        ))}
+                        {data
+                            ?.slice(0, 7)
+                            ?.map((product) => (
+                                <CatalogCard key={product?.id} title={product?.name} imageId={product?.images[0]?.id} />
+                            ))}
                     </div>
                 </div>
             </div>

@@ -5,8 +5,13 @@ export const productApi = createApi({
     reducerPath: 'productApi',
     baseQuery: fetchBaseQuery({ baseUrl: 'http://213.109.204.240:8000/api/v1/' }),
     endpoints: (builder) => ({
-        getProducts: builder.query<IProduct[], void>({
-            query: () => `product/`,
+        getProducts: builder.query<IProduct[], string | void>({
+            query: (id) => {
+                if (typeof id === 'string') {
+                    return `product/${id}`;
+                }
+                return `product/`;
+            },
         }),
         getProductTypes: builder.query<IProductType[], void>({
             query: () => `type_of_product/`,
