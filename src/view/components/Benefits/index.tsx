@@ -1,43 +1,28 @@
 import React from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
+import { ru } from './i18n/ru.ts';
 import { ContentWrapper } from '../ContentWrapper';
+import { BenefitCard } from '../UI/Card/BenefitCard';
 
 const cx = classNames.bind(styles);
 
-interface IBenefitsProps {
-    titles: string[];
-    descriptions: string[];
-}
-
-export const Benefits: React.FC<IBenefitsProps> = (props) => {
+export const Benefits: React.FC = () => {
     return (
         <div>
             <ContentWrapper>
-                <div className="grid grid-cols-2 grid-rows-2">
-                    <div>
-                        <div className="max-w-full rounded-[5px] bg-lightGray">
-                            <div className="text-3xl font-medium leading-10 text-black">{props.titles[0]}</div>
-                            <div className="mt-28 text-justify text-xl leading-7 text-black">
-                                {props.descriptions[0]}
-                            </div>
-                        </div>
-
-                        <div className="grid grid-cols-2">
-                            <div className="max-h-full rounded-[5px] bg-lightGray">
-                                <div>{props.titles[1]}</div>
-                                <div>{props.descriptions[1]}</div>
-                            </div>
-                            <div className="max-h-full rounded-[5px] bg-lightGray">
-                                <div>{props.titles[2]}</div>
-                                <div>{props.descriptions[2]}</div>
-                            </div>
-                        </div>
+                <div className="grid h-[614px] grid-cols-4 grid-rows-2 gap-7">
+                    <div className={'col-span-2'}>
+                        <BenefitCard name={ru.cards[0].name} description={ru.cards[0].description} />
                     </div>
-
-                    <div className="row-span-2 rounded-[5px] bg-lightGray">
-                        <div>{props.titles[3]}</div>
-                        <div>{props.descriptions[3]}</div>
+                    <div className={'col-span-2 row-span-2'}>
+                        <BenefitCard name={ru.cards[1].name} description={ru.cards[1].description} />
+                    </div>
+                    <div>
+                        <BenefitCard name={ru.cards[2].name} description={ru.cards[2].description} />
+                    </div>
+                    <div>
+                        <BenefitCard name={ru.cards[3].name} description={ru.cards[3].description} />
                     </div>
                 </div>
             </ContentWrapper>
