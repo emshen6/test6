@@ -1,9 +1,9 @@
 .full-item-container {
-    @apply flex flex-col items-stretch pb-12
+    @apply flex flex-col items-stretch
 }
 
 .catalog-full-item {
-    @apply mb-36 mt-6 flex w-full flex-col items-stretch rounded-3xl border border-solid border-gray px-7 py-6
+    @apply mb-14 mt-6 flex w-full flex-col items-stretch rounded-3xl border border-solid border-gray px-7 py-6
 }
 
 .full-item-image {

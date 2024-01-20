@@ -6,12 +6,12 @@ import { constants } from '../../../../../core/constants';
 
 const cx = classNames.bind(styles);
 
-interface ICatalogItamProps {
+interface ICatalogItemProps {
     id: number;
     title: string;
     imageId: string;
 }
-export const CatalogItem: React.FC<ICatalogItamProps> = (props) => {
+export const CatalogItem: React.FC<ICatalogItemProps> = (props) => {
     const title = props.title.length > 30 ? props.title.slice(0, 30).trim() + '...' : props.title;
 
     return (

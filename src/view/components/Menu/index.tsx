@@ -7,13 +7,15 @@ const cx = classNames.bind(styles);
 
 interface IMenuProps {
     curTypeId: number | null;
-    setCurTypeId: React.Dispatch<React.SetStateAction<number | null>>;
+    // eslint-disable-next-line @typescript-eslint/ban-types
+    setCurTypeId: Function;
+    isPieceOfShit?: boolean;
 }
 export const Menu: React.FC<IMenuProps> = (props) => {
     const { data } = useGetProductTypesQuery();
 
     useEffect(() => {
-        if (data) {
+        if (data && !props.isPieceOfShit) {
             props.setCurTypeId(data[0].id);
         }
     }, [data]);
