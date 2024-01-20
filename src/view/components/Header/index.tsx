@@ -11,12 +11,12 @@ const cx = classNames.bind(styles);
 export const Header: React.FC = () => {
     return (
         <ContentWrapper>
-            <div className="flex justify-between">
+            <div className="flex justify-between py-6">
                 <Icon icon={ICON.LOGO} width={175} height={55} color={'black'} />
-                <div className="m-5 flex gap-10">
+                <div className="grid grid-flow-col items-center gap-10">
                     <input type={'text'} placeholder={ru.searchPlaceholder} className={cx(styles.input)} />
-                    <div className="gap-5">
-                        <button className={cx(styles.smallButton)}>
+                    <div className="grid grid-flow-col gap-5">
+                        <button className={cx(styles.small_button)}>
                             <Icon icon={ICON.CATALOG} width={30} height={30} color={'black'} />
                         </button>
                         <button className={cx(styles.smallButton)}>

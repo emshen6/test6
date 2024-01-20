@@ -9,6 +9,7 @@ import { FactoryImage } from '../../../assets/image/FactoryImage';
 import { Header } from '../../components/Header';
 import { Benefits } from '../../components/Benefits/index.tsx';
 import { About } from '../../components/About';
+import { CatalogPart } from '../../components/CatalogPart';
 
 const cx = classNames.bind(styles);
 
@@ -24,6 +25,7 @@ export const Landing: React.FC = () => {
             <div className={'container block'}></div>
             <Benefits titles={titles} descriptions={descriptions} />
             <About />
+            <CatalogPart />
             <Footer />
         </div>
     );
