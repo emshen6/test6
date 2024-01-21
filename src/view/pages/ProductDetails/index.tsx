@@ -36,6 +36,7 @@ export const ProductDetails = () => {
                         <div className={'flex flex-wrap gap-7'}>
                             {productData && (
                                 <CatalogFullItem
+                                    id={Number(id)}
                                     productName={productData[0]?.name}
                                     description={productData[0]?.description}
                                     img={productData[0]?.images[0]?.id}
