@@ -1,0 +1,27 @@
+.inp{
+    @apply border-[1px] m-[15px]
+}
+
+.client-form{
+    @apply w-[700px] flex flex-col
+}
+
+.temp{
+    @apply text-3xl w-[1000px] bg-gray ;
+    display: flex;
+    justify-content: space-around;
+    border: 20px black;
+    border-radius: 15px;
+    box-shadow: 0 0 20px #000;
+}
+.form-cont{
+    display: flex;
+    justify-content: center;
+    margin-top: 50px;
+    margin-bottom: 50px;
+}
+.btn-send{
+    border: 2px black;
+    border-radius: 3px;
+    margin-bottom: 20px;
+}
