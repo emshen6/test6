@@ -19,7 +19,11 @@ export const productApi = createApi({
         getProductsByType: builder.query<IProduct[], string | number>({
             query: (id) => `product_by_type/${id.toString()}`,
         }),
+        getSearchProducts: builder.query<IProduct[], string>({
+            query: (searchInput) => `product_search/${searchInput.toString()}`,
+        }),
     }),
 });
 
-export const { useGetProductsQuery, useGetProductTypesQuery, useGetProductsByTypeQuery } = productApi;
+export const { useGetProductsQuery, useGetProductTypesQuery, useGetProductsByTypeQuery, useGetSearchProductsQuery } =
+    productApi;
