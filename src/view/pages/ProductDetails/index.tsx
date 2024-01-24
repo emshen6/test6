@@ -1,4 +1,3 @@
-import React, { useState } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
 import classNames from 'classnames';
 import { ru } from './i18n/ru.ts';
@@ -15,7 +14,7 @@ import { Footer } from '../../components/Footer';
 const cx = classNames.bind(styles);
 
 export const ProductDetails = () => {
-    const [curTypeId, setCurTypeId] = useState<number | null>(null);
+    const curTypeId = null;
     const { data: typesData } = useGetProductsByTypeQuery(curTypeId ?? 0);
 
     const location = useLocation();
