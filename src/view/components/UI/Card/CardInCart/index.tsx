@@ -6,13 +6,14 @@ import { constants } from '../../../../../core/constants';
 
 const cx = classNames.bind(styles);
 
-interface ICatalogItemProps {
+interface ICartItemProps {
     id: number;
-    title: string;
+    name: string;
     imageId: string;
+    amount: number;
 }
-export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
-    const name = props.title.length > 30 ? props.title.slice(0, 30).trim() + '...' : props.title;
+export const CardInCart: React.FC<ICartItemProps> = (props) => {
+    const name = props.name.length > 30 ? props.name.slice(0, 30).trim() + '...' : props.name;
 
     return (
         <Link to={`/catalog/${props.id}`}>
@@ -26,7 +27,7 @@ export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
                 <div className={styles.amount}>
                     <div className={styles.countSwitch}>
                         <button className={styles.btnSwitch}>+</button>
-                        <button>10</button>
+                        <button>{props.amount}</button>
                         <button className={styles.btnSwitch}>-</button>
                     </div>
                 </div>
