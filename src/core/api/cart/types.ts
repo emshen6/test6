@@ -1,6 +1,6 @@
 export interface ICartProduct {
     id: number;
-    productName: string;
-    images: string;
+    title: string;
+    imageId: string;
     amount: number;
 }

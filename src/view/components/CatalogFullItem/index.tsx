@@ -22,8 +22,8 @@ export const CatalogFullItem: React.FC<IProductDetailsProps> = (props) => {
         dispatch(
             addToCart({
                 id: props.id,
-                productName: props.productName,
-                images: props.img,
+                title: props.productName,
+                imageId: props.img,
                 amount: 0,
             }),
         );
