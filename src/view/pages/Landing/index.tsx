@@ -14,9 +14,6 @@ import { CatalogPart } from '../../components/CatalogPart';
 const cx = classNames.bind(styles);
 
 export const Landing: React.FC = () => {
-    const titles = ['a', 'b', 'c', 'd'];
-    const descriptions = ['a', 'b', 'c', 'd'];
-
     return (
         <div className={cx(styles.landing)}>
             <div className={styles.wrapper}>
@@ -24,7 +21,7 @@ export const Landing: React.FC = () => {
                     <Header />
                     <FactoryImage />
                 </div>
-                <Benefits titles={titles} descriptions={descriptions} />
+                <Benefits />
                 <About />
                 <CatalogPart />
                 <Footer />
