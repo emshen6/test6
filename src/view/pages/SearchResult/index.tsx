@@ -12,6 +12,7 @@ import { IProduct } from '../../../core/api/product/types.ts';
 
 const cx = classNames.bind(styles);
 
+
 export const ResultOfSearch = () => {
     const location = useLocation();
     // const navigate = useNavigate();
