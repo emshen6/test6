@@ -11,7 +11,7 @@ export const Benefits: React.FC = () => {
     return (
         <div>
             <ContentWrapper>
-                <div className="grid h-[614px] grid-cols-4 grid-rows-2 gap-7">
+                <div className={cx(styles.benefitsTable)}>
                     <div className={'col-span-2'}>
                         <BenefitCard name={ru.cards[0].name} description={ru.cards[0].description} />
                     </div>
