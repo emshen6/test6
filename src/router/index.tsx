@@ -1,7 +1,9 @@
 import { createBrowserRouter } from 'react-router-dom';
-import { Landing } from '../view/pages/Landing';
-import { Catalog } from '../view/pages/Catalog';
-import { ProductDetails } from '../view/pages/ProductDetails';
+import { Landing } from '../../../../Desktop/factory/src/view/pages/Landing';
+import { Catalog } from '../../../../Desktop/factory/src/view/pages/Catalog';
+import { ProductDetails } from '../../../../Desktop/factory/src/view/pages/ProductDetails';
+import {Cart} from "../../../../Desktop/factory/src/view/pages/Cart";
+import {ResultOfSearch} from "../../../../Desktop/factory/src/view/pages/SearchResult";
 
 export const router = createBrowserRouter([
     {
@@ -15,5 +17,14 @@ export const router = createBrowserRouter([
     {
         path: '/catalog/*',
         element: <ProductDetails />,
+    },
+    {
+        path: '/cart',
+        element: <Cart />,
+    },
+
+    {
+        path: '/search/*',
+        element: <ResultOfSearch />,
     },
 ]);
