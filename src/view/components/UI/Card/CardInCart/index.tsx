@@ -3,7 +3,7 @@ import classNames from 'classnames';
 import styles from './index.module.scss';
 import { constants } from '../../../../../core/constants';
 import { AppDispatch, store } from '../../../../../core/store';
-import { increaseAmount } from '../../../../../core/api/cart';
+import { decreaseAmount, deleteProductInCart, increaseAmount } from '../../../../../core/api/cart';
 
 const cx = classNames.bind(styles);
 
@@ -21,6 +21,14 @@ export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
         dispatch(increaseAmount(props.id));
     };
 
+    const handleDecreaseAmount: MouseEventHandler<HTMLButtonElement> = () => {
+        dispatch(decreaseAmount(props.id));
+    };
+
+    const handleDeleteProductInCart: MouseEventHandler<HTMLButtonElement> = () => {
+        dispatch(deleteProductInCart(props.id));
+    };
+
     return (
         <div>
             <div className={cx(styles.cartItem)}>
@@ -36,11 +44,15 @@ export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
                             +
                         </button>
                         <button>{props.amount.toString()}</button>
-                        <button className={styles.btnSwitch}>-</button>
+                        <button className={styles.btnSwitch} onClick={handleDecreaseAmount}>
+                            -
+                        </button>
                     </div>
                 </div>
                 <div className={styles.delBtn}>
-                    <button className={'h-[45px] w-[45px] rounded border-2'}>×</button>
+                    <button className={'h-[45px] w-[45px] rounded border-2'} onClick={handleDeleteProductInCart}>
+                        ×
+                    </button>
                 </div>
             </div>
         </div>
