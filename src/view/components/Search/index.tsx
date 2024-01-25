@@ -8,7 +8,7 @@ const cx = classNames.bind(styles);
 
 export const Search: React.FC = () => {
     const navigate = useNavigate();
-    const handleKeyPress = (event: { key: string }) => {
+    const handleKeyPress = (event: { target: { value: string }; key: string }) => {
         if (event.key === 'Enter') {
             const searchString = event.target.value.toString().trim();
 

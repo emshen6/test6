@@ -2,7 +2,7 @@ import React from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
-import { Search } from './Search';
+import { Search } from '../Search';
 import { ICON } from '../UI/Icon/IconType.tsx';
 import Icon from '../UI/Icon';
 import { ContentWrapper } from '../ContentWrapper';

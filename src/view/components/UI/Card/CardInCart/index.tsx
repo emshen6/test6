@@ -1,6 +1,5 @@
 import React, { MouseEventHandler } from 'react';
 import classNames from 'classnames';
-import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
 import { constants } from '../../../../../core/constants';
 import { AppDispatch, store } from '../../../../../core/store';
@@ -23,7 +22,7 @@ export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
     };
 
     return (
-        <Link to={`/catalog/${props.id}`}>
+        <div>
             <div className={cx(styles.cartItem)}>
                 <img
                     className={styles.image}
@@ -44,6 +43,6 @@ export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
                     <button className={'h-[45px] w-[45px] rounded border-2'}>×</button>
                 </div>
             </div>
-        </Link>
+        </div>
     );
 };
