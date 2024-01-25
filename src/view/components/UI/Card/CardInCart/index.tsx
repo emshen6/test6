@@ -1,19 +1,26 @@
-import React from 'react';
+import React, { MouseEventHandler } from 'react';
 import classNames from 'classnames';
 import { Link } from 'react-router-dom';
 import styles from './index.module.scss';
 import { constants } from '../../../../../core/constants';
+import { AppDispatch, store } from '../../../../../core/store';
+import { increaseAmount } from '../../../../../core/api/cart';
 
 const cx = classNames.bind(styles);
 
-interface ICartItemProps {
+interface ICatalogItemProps {
     id: number;
-    name: string;
+    title: string;
     imageId: string;
     amount: number;
 }
-export const CardInCart: React.FC<ICartItemProps> = (props) => {
-    const name = props.name.length > 30 ? props.name.slice(0, 30).trim() + '...' : props.name;
+export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
+    const dispatch: AppDispatch = store.dispatch;
+    const name = props.title.length > 30 ? props.title.slice(0, 30).trim() + '...' : props.title;
+
+    const handleIncreaseAmount: MouseEventHandler<HTMLButtonElement> = () => {
+        dispatch(increaseAmount(props.id));
+    };
 
     return (
         <Link to={`/catalog/${props.id}`}>
@@ -26,8 +33,10 @@ export const CardInCart: React.FC<ICartItemProps> = (props) => {
                 <div className={'m-8 flex w-full text-4xl'}>{name}</div>
                 <div className={styles.amount}>
                     <div className={styles.countSwitch}>
-                        <button className={styles.btnSwitch}>+</button>
-                        <button>{props.amount}</button>
+                        <button className={styles.btnSwitch} onClick={handleIncreaseAmount}>
+                            +
+                        </button>
+                        <button>{props.amount.toString()}</button>
                         <button className={styles.btnSwitch}>-</button>
                     </div>
                 </div>

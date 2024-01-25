@@ -14,9 +14,14 @@ const cartsSlice = createSlice({
                 state.push({ ...action.payload, amount: 1 });
             }
         },
+        increaseAmount: (state, action: PayloadAction<number>) => {
+            const productIndex = state.findIndex((product) => product.id === action.payload);
+
+            state[productIndex].amount += 1;
+        },
     },
 });
 
-export const { addToCart } = cartsSlice.actions;
+export const { addToCart, increaseAmount } = cartsSlice.actions;
 
 export default cartsSlice.reducer;
