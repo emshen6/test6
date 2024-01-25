@@ -13,7 +13,9 @@ export const Header: React.FC = () => {
     return (
         <ContentWrapper>
             <div className="flex justify-between py-6">
-                <Icon icon={ICON.LOGO} width={175} height={55} color={'black'} />
+                <Link to={`/`}>
+                    <Icon icon={ICON.LOGO} width={175} height={55} color={'black'} />
+                </Link>
                 <div className="grid grid-flow-col items-center gap-10">
                     <Search />
                     <div className="grid grid-flow-col gap-5">
