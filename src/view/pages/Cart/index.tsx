@@ -1,4 +1,3 @@
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
 import React from 'react';
 import { ru } from './i18n/ru.ts';
 import { ContentWrapper } from '../../components/ContentWrapper';
@@ -7,7 +6,7 @@ import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { CardInCart } from '../../components/UI/Card/CardInCart';
 import { SendfForm } from '../../components/UI/Card/SendForm';
-import { store } from '../../../core/store/index.ts';
+import { store } from '../../../core/store';
 import { ICartProduct } from '../../../core/api/cart/types.ts';
 
 export const Cart: React.FC = () => {

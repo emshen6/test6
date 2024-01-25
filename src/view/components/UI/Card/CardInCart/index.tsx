@@ -1,4 +1,4 @@
-import React, { MouseEventHandler } from 'react';
+import React, { MouseEventHandler, useState } from 'react';
 import classNames from 'classnames';
 import styles from './index.module.scss';
 import { constants } from '../../../../../core/constants';
@@ -16,17 +16,20 @@ interface ICatalogItemProps {
 export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
     const dispatch: AppDispatch = store.dispatch;
     const name = props.title.length > 30 ? props.title.slice(0, 30).trim() + '...' : props.title;
-
+    const [amount, setAmount] = useState(props.amount);
     const handleIncreaseAmount: MouseEventHandler<HTMLButtonElement> = () => {
         dispatch(increaseAmount(props.id));
+        setAmount(amount + 1);
     };
 
     const handleDecreaseAmount: MouseEventHandler<HTMLButtonElement> = () => {
         dispatch(decreaseAmount(props.id));
+        setAmount(amount - 1);
     };
 
     const handleDeleteProductInCart: MouseEventHandler<HTMLButtonElement> = () => {
         dispatch(deleteProductInCart(props.id));
+        localStorage.setItem('cart', JSON.stringify(store.getState().cart));
     };
 
     return (
@@ -43,7 +46,7 @@ export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
                         <button className={styles.btnSwitch} onClick={handleIncreaseAmount}>
                             +
                         </button>
-                        <button>{props.amount.toString()}</button>
+                        <button>{amount.toString()}</button>
                         <button className={styles.btnSwitch} onClick={handleDecreaseAmount}>
                             -
                         </button>
