@@ -18,6 +18,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
         if (data && !props.isPieceOfShit) {
             props.setCurTypeId(data[0].id);
         }
+        // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [data]);
 
     return (
