@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { KeyboardEvent } from 'react';
 import classNames from 'classnames';
 import { useNavigate } from 'react-router-dom';
 import { ru } from './i18n/ru.ts';
@@ -8,9 +8,10 @@ const cx = classNames.bind(styles);
 
 export const Search: React.FC = () => {
     const navigate = useNavigate();
-    const handleKeyPress = (event: { target: { value: string }; key: string }) => {
+
+    const handleKeyPress = (event: KeyboardEvent<HTMLInputElement>) => {
         if (event.key === 'Enter') {
-            const searchString = event.target.value.toString().trim();
+            const searchString = event.currentTarget.value.trim();
 
             if (searchString.length < 1) {
                 return;
@@ -21,7 +22,7 @@ export const Search: React.FC = () => {
 
     return (
         <input
-            onKeyPress={handleKeyPress}
+            onKeyDown={handleKeyPress}
             type={'text'}
             placeholder={ru.searchPlaceholder}
             className={cx(styles.input)}
