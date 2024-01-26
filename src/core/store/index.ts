@@ -2,18 +2,15 @@ import { combineReducers, configureStore } from '@reduxjs/toolkit';
 import { persistStore, persistReducer } from 'redux-persist';
 import storage from 'redux-persist/lib/storage';
 import { productApi } from '../api/product';
-import cart from '../api/cart/index';
-import form from '../api/form';
+import cartReducer from '../api/cart/index';
+import formReducer from '../api/form';
 
-const persistConfig = {
-    key: 'root',
-    storage,
-};
+const persistConfig = { key: 'root', storage };
 
 const rootReducer = combineReducers({
     [productApi.reducerPath]: productApi.reducer,
-    cart,
-    form,
+    cart: cartReducer,
+    form: formReducer,
 });
 
 const persistedReducer = persistReducer(persistConfig, rootReducer);

@@ -3,7 +3,7 @@ import { ICartProduct } from './types.ts';
 
 const cartsSlice = createSlice({
     name: 'cart',
-    initialState: {} as ICartProduct[],
+    initialState: [] as ICartProduct[],
     reducers: {
         addToCart: (state, action: PayloadAction<ICartProduct>) => {
             const productIndex = state.findIndex((product) => product.id === action.payload.id);
