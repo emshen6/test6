@@ -8,5 +8,5 @@ interface ITitleProps {
     name: string;
 }
 export const Title: React.FC<ITitleProps> = (props) => {
-    return <div className={cx(styles.title)}>{props.name}</div>;
+    return <div id={'title'} className={cx(styles.title)}>{props.name}</div>;
 };
