@@ -1,16 +1,17 @@
 import React, { useState } from 'react';
 import { ToastContainer, toast } from 'react-toastify';
-import { useDispatch, useSelector } from 'react-redux';
+import { useSelector, useDispatch } from 'react-redux';
+import axios from 'axios';
 import styles from './index.module.scss';
 import { ru } from './i18n/ru';
-import { submitForm } from '../../../../../core/api/form';
 import { IFormData } from '../../../../../core/api/form';
-import { AppDispatch, RootState } from '../../../../../core/store';
+import { RootState } from '../../../../../core/store';
 import 'react-toastify/dist/ReactToastify.css';
 import { ICartProduct } from '../../../../../core/api/cart/types';
+import { deleteAll } from '../../../../../core/api/cart';
 
 export const SendfForm: React.FC = () => {
-    const dispatch: AppDispatch = useDispatch();
+    const dispatch = useDispatch();
     const data = useSelector((state: RootState) => state.cart);
 
     const [formData, setFormData] = useState<IFormData>({
@@ -44,15 +45,13 @@ export const SendfForm: React.FC = () => {
             request_product: cartProducts,
         }));
 
-        try {
-            toast.promise(dispatch(submitForm(formData)), {
-                pending: ru.pendingMsg,
-                success: ru.successMsg,
-                error: ru.errorMsg,
-            });
-        } catch (error) {
-            toast.error(ru.errorMsg);
-        }
+        axios
+            .post('http://213.109.204.240:8000/api/v1/request_for_product/', formData)
+            .then(() => {
+                toast.success(ru.successMsg);
+                dispatch(deleteAll());
+            })
+            .catch(() => toast.error(ru.errorMsg));
     };
 
     return (
