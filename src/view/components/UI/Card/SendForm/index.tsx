@@ -59,6 +59,7 @@ export const SendfForm: React.FC = () => {
             <div className={styles.temp}>
                 <form className={styles.clientForm} action="" method="post" onSubmit={handleSubmit} id="form">
                     <input
+                        id={'input1'}
                         className={styles.inp}
                         type="text"
                         name="fio"
@@ -68,6 +69,7 @@ export const SendfForm: React.FC = () => {
                         placeholder={ru.fio}
                     />
                     <input
+                        id={'input2'}
                         className={styles.inp}
                         type="text"
                         name="phone"
@@ -77,6 +79,7 @@ export const SendfForm: React.FC = () => {
                         placeholder={ru.phone}
                     />
                     <input
+                        id={'input3'}
                         className={styles.inp}
                         type="text"
                         name="company"
@@ -86,6 +89,7 @@ export const SendfForm: React.FC = () => {
                         placeholder={ru.company}
                     />
                     <input
+                        id={'input4'}
                         className={styles.inp}
                         type="text"
                         name="email"
@@ -95,6 +99,7 @@ export const SendfForm: React.FC = () => {
                         placeholder={ru.email}
                     />
                     <input
+                        id={'input5'}
                         className={styles.inp}
                         type="text"
                         name="description_by_customer"

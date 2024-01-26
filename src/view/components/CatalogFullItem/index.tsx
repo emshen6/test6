@@ -44,7 +44,7 @@ export const CatalogFullItem: React.FC<IProductDetailsProps> = (props) => {
                     <span className="flex flex-col items-stretch justify-center">
                         <div className={cx(styles.productTitle)}>{props.productName}</div>
                     </span>
-                    <button className={cx(styles.toCartButton)} onClick={handleAddToCart}>
+                    <button id={'addToCart'} className={cx(styles.toCartButton)} onClick={handleAddToCart}>
                         {ru.to_cart}
                     </button>
                 </div>

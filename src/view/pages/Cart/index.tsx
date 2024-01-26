@@ -20,7 +20,7 @@ export const Cart: React.FC = () => {
                 <div className={'mb-36 mt-5 grid grid-cols-12 gap-14'}>
                     <Title name={ru.title} />
                 </div>
-                <div className={'flex flex-wrap gap-7'}>
+                <div className={'flex flex-wrap gap-7'} id={'itemsInCart'}>
                     {data?.map((x: ICartProduct) => (
                         <CardInCart
                             key={x?.id}
