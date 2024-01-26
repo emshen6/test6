@@ -1,16 +1,17 @@
 import React from 'react';
+import { useSelector } from 'react-redux';
 import { ru } from './i18n/ru.ts';
+import { RootState } from '../../../core/store/index.ts';
 import { ContentWrapper } from '../../components/ContentWrapper';
 import { Title } from '../../components/UI/Text/Title';
 import { Header } from '../../components/Header';
 import { Footer } from '../../components/Footer';
 import { CardInCart } from '../../components/UI/Card/CardInCart';
 import { SendfForm } from '../../components/UI/Card/SendForm';
-import { store } from '../../../core/store';
 import { ICartProduct } from '../../../core/api/cart/types.ts';
 
 export const Cart: React.FC = () => {
-    const data = store.getState().cart;
+    const data = useSelector((state: RootState) => state.cart);
 
     return (
         <>

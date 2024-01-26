@@ -1,8 +1,9 @@
 import React, { MouseEventHandler, useState } from 'react';
 import classNames from 'classnames';
+import { useDispatch } from 'react-redux';
 import styles from './index.module.scss';
 import { constants } from '../../../../../core/constants';
-import { AppDispatch, store } from '../../../../../core/store';
+import { AppDispatch } from '../../../../../core/store';
 import { decreaseAmount, deleteProductInCart, increaseAmount } from '../../../../../core/api/cart';
 
 const cx = classNames.bind(styles);
@@ -14,9 +15,10 @@ interface ICatalogItemProps {
     amount: number;
 }
 export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
-    const dispatch: AppDispatch = store.dispatch;
+    const dispatch: AppDispatch = useDispatch();
     const name = props.title.length > 30 ? props.title.slice(0, 30).trim() + '...' : props.title;
     const [amount, setAmount] = useState(props.amount);
+
     const handleIncreaseAmount: MouseEventHandler<HTMLButtonElement> = () => {
         dispatch(increaseAmount(props.id));
         setAmount(amount + 1);
@@ -29,7 +31,6 @@ export const CardInCart: React.FC<ICatalogItemProps> = (props) => {
 
     const handleDeleteProductInCart: MouseEventHandler<HTMLButtonElement> = () => {
         dispatch(deleteProductInCart(props.id));
-        localStorage.setItem('cart', JSON.stringify(store.getState().cart));
     };
 
     return (
