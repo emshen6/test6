@@ -22,16 +22,20 @@ export const Menu: React.FC<IMenuProps> = (props) => {
     }, [data]);
 
     return (
-        <div className={'grid gap-7'} id="category">
-            {data?.map((x) => (
-                <div
-                    key={x.id}
-                    onClick={() => props.setCurTypeId(x.id)}
-                    className={cx(props.curTypeId === x.id ? styles.textUnderlined : styles.text)}
-                >
-                    {x.name}
+        <div>
+            {data && data.length !== 0 && (
+                <div className={'grid gap-7'} id="category">
+                    {data?.map((x) => (
+                        <div
+                            key={x.id}
+                            onClick={() => props.setCurTypeId(x.id)}
+                            className={cx(props.curTypeId === x.id ? styles.textUnderlined : styles.text)}
+                        >
+                            {x.name}
+                        </div>
+                    ))}
                 </div>
-            ))}
+            )}
         </div>
     );
 };

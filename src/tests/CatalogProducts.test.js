@@ -15,9 +15,15 @@ describe('catalog products page', () => {
 
     test('page loads correctly', async () => {
         await page.goto('http://localhost:5173/catalog');
-        await page.waitForSelector('#products');
-        const elements = await page.$$('#products > *');
-        console.log(elements);
-        expect(elements.length).toBeGreaterThan(0);
+        await page.waitForSelector('#category');
+        const category = await page.$$('#category > *');
+
+        for (const c of category) {
+            console.log(c);
+            await c.click();
+            await page.waitForSelector('#products');
+            const elements = await page.$$('#products > *');
+            expect(elements.length).toBeGreaterThan(0);
+        }
     }, 10000);
 });
