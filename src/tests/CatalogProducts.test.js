@@ -23,6 +23,7 @@ describe('catalog products page', () => {
             await c.click();
             await page.waitForSelector('#products');
             const elements = await page.$$('#products > *');
+
             expect(elements.length).toBeGreaterThan(0);
         }
     }, 10000);

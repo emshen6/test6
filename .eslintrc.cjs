@@ -162,5 +162,5 @@ module.exports = {
             },
         },
     ],
-    ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts'],
+    ignorePatterns: ['dist', '.eslintrc.cjs', 'vite.config.ts', '**/tests/**'],
 }
