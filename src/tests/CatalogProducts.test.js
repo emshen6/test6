@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-describe('cart page', () => {
+describe('catalog products page', () => {
     let browser;
     let page;
 
@@ -14,10 +14,10 @@ describe('cart page', () => {
     });
 
     test('page loads correctly', async () => {
-        await page.goto('http://localhost:5173/cart');
-        await page.waitForSelector('#title');
-        const html = await page.$eval('#title', (e) => e.innerHTML);
-
-        expect(html).toBe('Корзина');
+        await page.goto('http://localhost:5173/catalog');
+        await page.waitForSelector('#products');
+        const elements = await page.$$('#products > *');
+        console.log(elements);
+        expect(elements.length).toBeGreaterThan(0);
     }, 10000);
 });

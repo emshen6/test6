@@ -22,11 +22,13 @@ export const Catalog = () => {
                     </div>
                     <div className={'col-span-9'}>
                         <Title name={ru.title} />
-                        <div className={'flex flex-wrap gap-7'}>
-                            {data?.map((x) => (
-                                <CatalogItem key={x?.id} id={x?.id} title={x?.name} imageId={x?.images[0]?.id} />
-                            ))}
-                        </div>
+                        {data && data.length !== 0 && (
+                            <div className={'flex flex-wrap gap-7'} id="products">
+                                {data.map((x) => (
+                                    <CatalogItem key={x?.id} id={x?.id} title={x?.name} imageId={x?.images[0]?.id} />
+                                ))}
+                            </div>
+                        )}
                     </div>
                 </div>
             </ContentWrapper>

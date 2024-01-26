@@ -57,7 +57,7 @@ export const SendfForm: React.FC = () => {
     return (
         <div className={styles.formCont}>
             <div className={styles.temp}>
-                <form className={styles.clientForm} action="" method="post" onSubmit={handleSubmit}>
+                <form className={styles.clientForm} action="" method="post" onSubmit={handleSubmit} id="form">
                     <input
                         className={styles.inp}
                         type="text"

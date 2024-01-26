@@ -1,6 +1,6 @@
 const puppeteer = require('puppeteer');
 
-describe('cart page', () => {
+describe('form sending', () => {
     let browser;
     let page;
 
@@ -15,9 +15,9 @@ describe('cart page', () => {
 
     test('page loads correctly', async () => {
         await page.goto('http://localhost:5173/cart');
-        await page.waitForSelector('#title');
-        const html = await page.$eval('#title', (e) => e.innerHTML);
+        await page.waitForSelector('#from');
+        const form = await page.$eval('#form', (e) => e.innerHTML);
 
-        expect(html).toBe('Корзина');
+        console.log(form);
     }, 10000);
 });

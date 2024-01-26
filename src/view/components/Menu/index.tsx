@@ -22,7 +22,7 @@ export const Menu: React.FC<IMenuProps> = (props) => {
     }, [data]);
 
     return (
-        <div className={'grid gap-7'}>
+        <div className={'grid gap-7'} id="category">
             {data?.map((x) => (
                 <div
                     key={x.id}
