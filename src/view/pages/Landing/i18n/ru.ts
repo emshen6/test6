@@ -1,2 +1,1 @@
-export const ru = {
-}
+export const ru = {};
