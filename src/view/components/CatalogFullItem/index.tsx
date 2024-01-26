@@ -1,5 +1,6 @@
 import React, { MouseEventHandler } from 'react';
 import classNames from 'classnames';
+import { ToastContainer, toast } from 'react-toastify';
 import { ru } from './i18n/ru.ts';
 import styles from './index.module.scss';
 import { constants } from '../../../core/constants';
@@ -27,6 +28,7 @@ export const CatalogFullItem: React.FC<IProductDetailsProps> = (props) => {
                 amount: 0,
             }),
         );
+        toast.success(ru.toast_msg);
     };
 
     return (
@@ -49,6 +51,7 @@ export const CatalogFullItem: React.FC<IProductDetailsProps> = (props) => {
                 <div className={cx(styles.descriptionTitle)}>{ru.description}</div>
                 <div className={cx(styles.description)}>{props.description}</div>
             </span>
+            <ToastContainer position="bottom-right" />
         </div>
     );
 };
